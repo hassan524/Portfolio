@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  scroll-behavior: smooth !important;
+}
+
+
+
+
+body {
+  height: 100vh !important;
+  width: 100vw !important;
+  font-family: "Manrope", sans-serif;
+  overflow-x: hidden;
+}
+
+.anchors {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.anchors:hover {
+  opacity: .8;
+}
+
+.anchors::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #000;
+  bottom: 0;
+  left: -100%;
+  transition: left 0.8s ease;
+}
+
+.anchors:hover::before {
+  left: -20%;
+}
+
+.timeline-line {
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 640px) {
+  .timeline-line {
+    display: none;
+  }
+
+  .timeline {
+    gap: 3rem;
+  }
+
+  .timeline-dot {
+    left: 0;
+    transform: none;
+  }
+
+  .timeline-card {
+    width: 100% !important;
+    left: 0% !important;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+  }
+}
+
+
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
