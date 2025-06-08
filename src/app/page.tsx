@@ -13,7 +13,7 @@ import ProjectStack from '@/components/Projects';
 const Page = () => {
   return (
     <>
-      {/* <ParticlesBackground /> */}
+      <ParticlesBackground />
       <Navbar />
       <Hero />
       <About />

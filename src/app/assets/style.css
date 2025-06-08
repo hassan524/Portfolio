@@ -2,6 +2,7 @@
 
 * {
   scroll-behavior: smooth !important;
+  box-sizing: border-box;
 }
 
 
@@ -41,8 +42,7 @@ body {
 
 .timeline-line {
   position: absolute;
-  height: 100%;
-  width: 2px;
+  width: 1px;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -54,7 +54,7 @@ body {
   }
 
   .timeline {
-    gap: 3rem;
+    gap: 4rem;
   }
 
   .timeline-dot {
@@ -63,15 +63,15 @@ body {
   }
 
   .timeline-card {
-    width: 100% !important;
+    /* width: 100% !important;  */
     left: 0% !important;
-    background-color: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(6px);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-    padding: 1rem;
     border-radius: 1rem;
-    border: 1px solid #e2e8f0;
+    will-change: transform;
   }
+
+  /* .floating {
+    background: linear-gradient(to right, #EFECFD, transparent);
+  } */
 }
 
 
@@ -92,9 +92,12 @@ body {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }

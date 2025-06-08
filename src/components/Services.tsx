@@ -2,13 +2,13 @@ import React from 'react';
 
 const Services = () => {
   return (
-    <div className="min-h-screen flex flex-col gap-12 justify-center items-center py-10 px-4 md:px-12 box-border overflow-x-hidden">
+    <div className="min-h-screen flex flex-col gap-[4rem] justify-center items-center py-10 px-6 md:px-12 box-border overflow-x-hidden">
 
       {/* Heading */}
       <h2
         className="text-5xl sm:text-4xl md:text-5xl font-bold text-center"
         data-aos="fade-down"
-        data-aos-duration={1500}
+        data-aos-duration={1000}
       >
         How Can I Help You
       </h2>
@@ -17,7 +17,7 @@ const Services = () => {
       <div
         className="w-full max-w-5xl bg-gradient-to-r from-[#EFECFD] to-transparent rounded-3xl p-8 flex flex-col lg:flex-row items-center gap-8"
         data-aos="fade-right"
-        data-aos-duration={1500}
+        data-aos-duration={1000}
       >
 
         {/* Image */}
@@ -56,7 +56,7 @@ const Services = () => {
       <div
         className="w-full max-w-5xl bg-gradient-to-r from-[#EFECFD] to-transparent rounded-3xl p-8 flex flex-col lg:flex-row-reverse items-center gap-8"
         data-aos="fade-left"
-        data-aos-duration={1500}
+        data-aos-duration={1000}
       >
 
          {/* Image */}
@@ -94,8 +94,8 @@ const Services = () => {
       {/* Service Item 3 */}
       <div
         className="w-full max-w-5xl bg-gradient-to-r from-[#EFECFD] to-transparent rounded-3xl p-8 flex flex-col lg:flex-row items-center gap-8"
-        data-aos="zoom-in"
-        data-aos-duration={1500}
+        data-aos="fade-right"
+        data-aos-duration={1000}
       >
 
        {/* Image */}

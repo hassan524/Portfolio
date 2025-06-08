@@ -8,6 +8,7 @@ export default function ProjectStack() {
       description:
         "A real estate platform where users can browse properties, upload their own listings with images, and directly chat with clients for inquiries.",
       tech: ["Typescript", "Nextjs", "MongoDB", "SocketIo", "Tailwindcss"],
+      fade: 'fade-left'
     },
     {
       img: "/p2.png",
@@ -15,6 +16,7 @@ export default function ProjectStack() {
       description:
         "A full-featured Spotify desktop app clone with login via Spotify API. Users can view their playlists, recently played songs, and play music seamlessly.",
       tech: ["Typescript", "ReactJS", "ElectronJS", "SpotifyApi", "Tailwindcss"],
+      fade: 'fade-right'
     },
     {
       img: "/p3.png",
@@ -22,6 +24,7 @@ export default function ProjectStack() {
       description:
         "An eCommerce web app with cart functionality and dynamic product filtering based on search and categories.",
       tech: ["Typescript", "ReactJS", "NodeJS", "ExpressJS", "MongoDB", "Tailwindcss"],
+      fade: 'fade-left'
     },
     {
       img: "/p4.png",
@@ -29,12 +32,13 @@ export default function ProjectStack() {
       description:
         "A project and task management app where users can create projects, organize them into groups, manage tasks, and mark them as completed.",
       tech: ["Typescript", "ReactJS", "Tailwindcss", "Firebase", "Vite"],
+      fade: 'fade-right'
     },
   ];
 
   return (
-    <div className="min-h-screen flex justify-center py-10 px-4 md:px-20 text-slate-900">
-      <div className="w-full max-w-4xl flex flex-col gap-12 justify-center items-center relative">
+    <div className="min-h-screen flex justify-center py-10 px-6 md:px-12 text-slate-900">
+      <div className="w-full max-w-6xl flex flex-col gap-12 justify-center items-center relative">
         <h2
           className="text-5xl font-bold text-center mb-10"
           data-aos="fade-down"
@@ -43,16 +47,15 @@ export default function ProjectStack() {
           My Recent Projects
         </h2>
 
-        <div className="timeline grid gap-4 relative">
+        <div className="timeline overflow-hidden grid gap-4 relative">
           {projects.map((item, i) => (
             <div key={i} className="timeline-item relative">
-              <div className="timeline-dot absolute right-1/2 translate-x-[40%] w-2 h-2 bg-white rounded-full border-4 !border-gray-200 z-10"></div>
 
               <div
-                className={`timeline-card floating flex flex-col gap-5 relative w-[47%] rounded transition duration-300 ease-in-out ${
-                  i % 2 === 0 ? "left-[53%]" : ""
-                }  border border-slate-100  sm:p-4`}
-              >
+                className={`timeline-card flex flex-col gap-5 relative w-[100%] sm:w-[47%] rounded transition duration-300 ease-in-out ${i % 2 === 0 ? "left-[53%]" : ""
+                  }   sm:p-4`}
+                data-aos={item.fade} 
+                data-aos-duration={1000}>
                 <div className="overflow-hidden rounded-md">
                   <img
                     src={item.img}
@@ -82,7 +85,7 @@ export default function ProjectStack() {
             </div>
           ))}
 
-          <div className="timeline-line absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-full bg-gray-200"></div>
+          <div className="timeline-line absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-full bg-gradient-to-b from-slate-500 to-slate-50"></div>
         </div>
       </div>
     </div>

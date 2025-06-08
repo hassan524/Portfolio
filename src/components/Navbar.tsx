@@ -9,7 +9,7 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className='nav h-[14vh] sm:px-10 px-5 flex items-center justify-between fixed text-slate-900 w-full shadow-xs z-50 bg-white'>
+    <nav className='nav h-[14vh] sm:px-10 px-5 flex items-center top-0 left-0 justify-between fixed text-slate-900 w-full shadow-xs z-50 bg-white'>
       
       {/* Logo */}
       <div id='logo' className="w-[10rem]">
