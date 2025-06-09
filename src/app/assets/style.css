@@ -25,21 +25,6 @@ body {
   opacity: .8;
 }
 
-.anchors::before {
-  content: '';
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  background: #000;
-  bottom: 0;
-  left: -100%;
-  transition: left 0.8s ease;
-}
-
-.anchors:hover::before {
-  left: -20%;
-}
-
 .timeline-line {
   position: absolute;
   width: 1px;
@@ -54,7 +39,7 @@ body {
   }
 
   .timeline {
-    gap: 4rem;
+    gap: 5rem;
   }
 
   .timeline-dot {

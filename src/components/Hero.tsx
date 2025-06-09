@@ -8,17 +8,16 @@ const Hero = () => {
 
   React.useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ['Hassan'],
-      typeSpeed: 150,
-      backSpeed: 40,
-      backDelay: 1500,
-      loop: false,
-       showCursor: false, 
+      strings: ['Hassan', 'Hass', 'Hassan', 'Ha', 'Hassan'],
+      typeSpeed: 100,
+      backSpeed: 60,
+      backDelay: 1000,
+      startDelay: 500,
+      loop: true,
+      showCursor: false,
     });
 
-    return () => {
-      typed.destroy();
-    };
+    return () => typed.destroy();
   }, []);
 
   return (
@@ -38,12 +37,15 @@ const Hero = () => {
         </h2>
 
         <p className="text-base sm:text-lg text-gray-600 leading-7 sm:max-w-2xl mx-auto">
-          I build responsive, modern websites and full-stack web applications using technologies like React, Node.js, and more. I'm passionate about clean code, great UI/UX, and delivering smooth digital experiences.
+          I build responsive, modern websites and full-stack web applications. I'm passionate about clean code, great UI/UX, and delivering smooth digital experiences.
         </p>
 
-        <button className="bg-slate-900 cursour-pointer border border-transparent hover:border-slate-900 transition duration-300 hover:text-slate-900 hover:bg-transparent text-white px-5 py-3 rounded-lg tracking-wide">
-          Contact Me
-        </button>
+        <a href="#Contact">
+          <button className="bg-slate-900 cursor-pointer border border-transparent hover:border-slate-900 transition duration-300 hover:text-slate-900 hover:bg-transparent text-white px-5 py-3 rounded-lg tracking-wide">
+            Contact Me
+          </button>
+        </a>
+
       </div>
     </main>
   )

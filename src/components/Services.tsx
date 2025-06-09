@@ -2,7 +2,7 @@ import React from 'react';
 
 const Services = () => {
   return (
-    <div className="min-h-screen flex flex-col gap-[4rem] justify-center items-center py-10 px-6 md:px-12 box-border overflow-x-hidden">
+    <div id='Services' className="min-h-screen flex flex-col gap-[4rem] justify-center items-center py-10 px-6 md:px-12 box-border overflow-x-hidden">
 
       {/* Heading */}
       <h2
@@ -16,7 +16,7 @@ const Services = () => {
       {/* Service Item 1 */}
       <div
         className="w-full max-w-5xl bg-gradient-to-r from-[#EFECFD] to-transparent rounded-3xl p-8 flex flex-col lg:flex-row items-center gap-8"
-        data-aos="fade-right"
+        data-aos="fade-down"
         data-aos-duration={1000}
       >
 
@@ -45,7 +45,7 @@ const Services = () => {
           <p className="text-base sm:text-lg text-gray-600 leading-7">
             Need a clean, fast, and mobile-first website? I design and develop custom solutions to bring your ideas to life — whether it's a personal portfolio or a business site.
           </p>
-          <button className="mt-2 bg-slate-900 text-white px-6 py-2 rounded-full hover:bg-slate-700 transition">
+          <button className="mt-2 bg-slate-900 cursor-pointer border border-transparent hover:border-slate-900 transition duration-300 hover:text-slate-900 hover:bg-transparent text-white px-5 py-2 rounded-3xl tracking-wide">
             Hire Me
           </button>
         </div>
@@ -55,14 +55,14 @@ const Services = () => {
       {/* Service Item 2 */}
       <div
         className="w-full max-w-5xl bg-gradient-to-r from-[#EFECFD] to-transparent rounded-3xl p-8 flex flex-col lg:flex-row-reverse items-center gap-8"
-        data-aos="fade-left"
+        data-aos="fade-down"
         data-aos-duration={1000}
       >
 
          {/* Image */}
         <div className="w-full lg:w-1/2 sm:flex hidden justify-center">
           <img
-            src="/dev.jpg"
+            src="/ui.jpg"
             className="sm:w-60 sm:h-60 w-48 h-48 md:w-72 md:h-72 rounded-full object-contain grayscale"
             alt="developer"
           />
@@ -70,7 +70,7 @@ const Services = () => {
 
         <div className="w-full lg:w-1/2 flex sm:hidden justify-center">
           <img
-            src="/dev.jpg"
+            src="/ui.jpg"
             alt="developer"
             className="max-w-full h-auto rounded-full object-contain grayscale sm:w-56 w-40 md:w-64"
           />
@@ -84,7 +84,7 @@ const Services = () => {
           <p className="text-base sm:text-lg text-gray-600 leading-7">
             I create modern, user-friendly interfaces that ensure a seamless experience across all devices and screen sizes.
           </p>
-          <button className="mt-2 bg-slate-900 text-white px-6 py-2 rounded-full hover:bg-slate-700 transition">
+          <button className="mt-2 bg-slate-900 cursor-pointer border border-transparent hover:border-slate-900 transition duration-300 hover:text-slate-900 hover:bg-transparent text-white px-5 py-2 rounded-3xl tracking-wide">
             Hire Me
           </button>
         </div>
@@ -94,14 +94,14 @@ const Services = () => {
       {/* Service Item 3 */}
       <div
         className="w-full max-w-5xl bg-gradient-to-r from-[#EFECFD] to-transparent rounded-3xl p-8 flex flex-col lg:flex-row items-center gap-8"
-        data-aos="fade-right"
+        data-aos="fade-down"
         data-aos-duration={1000}
       >
 
        {/* Image */}
         <div className="w-full lg:w-1/2 sm:flex hidden justify-center">
           <img
-            src="/dev.jpg"
+            src="/ui2.png"
             className="sm:w-60 sm:h-60 w-48 h-48 md:w-72 md:h-72 rounded-full object-contain grayscale"
             alt="developer"
           />
@@ -109,7 +109,7 @@ const Services = () => {
 
         <div className="w-full lg:w-1/2 flex sm:hidden justify-center">
           <img
-            src="/dev.jpg"
+            src="/ui2.png"
             alt="developer"
             className="max-w-full h-auto rounded-full object-contain grayscale sm:w-56 w-40 md:w-64"
           />
@@ -123,7 +123,7 @@ const Services = () => {
           <p className="text-base sm:text-lg text-gray-600 leading-7">
             I help you maintain your website, improve speed, fix bugs, and ensure everything runs smoothly for your visitors.
           </p>
-          <button className="mt-2 bg-slate-900 text-white px-6 py-2 rounded-full hover:bg-slate-700 transition">
+          <button className="mt-2 bg-slate-900 cursor-pointer border border-transparent hover:border-slate-900 transition duration-300 hover:text-slate-900 hover:bg-transparent text-white px-5 py-2 rounded-3xl tracking-wide">
             Hire Me
           </button>
         </div>

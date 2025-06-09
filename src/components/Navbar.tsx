@@ -9,20 +9,22 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className='nav h-[14vh] sm:px-10 px-5 flex items-center top-0 left-0 justify-between fixed text-slate-900 w-full shadow-xs z-50 bg-white'>
+    <nav className='nav h-[13vh] sm:px-10 px-5 flex items-center top-0 left-0 justify-between fixed text-slate-900 w-full shadow-xs z-50 bg-white'>
       
       {/* Logo */}
-      <div id='logo' className="w-[10rem]">
+      <div id='logo' className='w-[9rem]'>
         <img src="/logo.png" alt="logo" />
+        {/* <h2 className='font-bold sm:block hidden text-4xl'>Hassan Rehan</h2>
+        <h2 className='font-bold block sm:hidden text-4xl'>Hassan R</h2> */}
       </div>
 
       {/* Desktop Menu */}
       <ul className='md:flex gap-8 text-xl hidden'>
         <li><a className='anchors' href="#">Home</a></li>
         <li><a className='anchors' href="#about">About</a></li>
-        <li><a className='anchors' href="">Services</a></li>
-        <li><a className='anchors' href="">Projects</a></li>
-        <li><a className='anchors' href="">Contact</a></li>
+        <li><a className='anchors' href="#Services">Services</a></li>
+        <li><a className='anchors' href="#Project">Projects</a></li>
+        <li><a className='anchors' href="#Contact">Contact</a></li>
       </ul>
 
       {/* Mobile Toggle Button */}
