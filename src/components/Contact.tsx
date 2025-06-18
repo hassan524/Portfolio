@@ -57,7 +57,7 @@ const Contact = () => {
   return (
     <div
       id="Contact"
-      className="min-h-screen flex-col lg:flex gap-[3rem] text-slate-900 py-10 px-6 md:px-12 sm:px-12 overflow-x-hidden"
+      className="flex-col lg:flex gap-[3rem] text-slate-900 py-10 px-6 md:px-12 sm:px-12 overflow-x-hidden"
     >
       <div className="text-center mb-12" data-aos="fade-down" data-aos-duration="1500">
         <h2 className="text-4xl md:text-5xl font-bold tracking-wider mb-2">
