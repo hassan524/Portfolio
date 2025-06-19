@@ -32,9 +32,9 @@ const Certificates = () => {
         <div className="border relative md:left-[50%] flex flex-col gap-2 border-slate-300 p-6 rounded-xl cursor-pointer hover:scale-[1.05] transition ease duration-300" data-aos="fade-down" data-aos-duration={1500}>
           <h3 className="text-xl font-semibold text-slate-900">Frontend Developer React</h3>
           {/* <p></p> */}
-          <span className="text-slate-700 mt-2">HackerRank · 202t</span>
+          <span className="text-slate-700 mt-2">HackerRank · 2025</span>
         </div>
-</a>
+       </a>
 
       </div>
 
