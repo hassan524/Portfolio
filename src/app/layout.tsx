@@ -7,7 +7,7 @@ import RootLayout from './RootLayout'; // client wrapper
 
 export const metadata = {
   title: "Hassan's Portfolio",
-  description: "My personal portfolio built with Next.js and TypeScript.",
+  description: "Check out my projects & services,",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
