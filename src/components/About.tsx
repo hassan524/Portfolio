@@ -22,7 +22,7 @@ const About = () => {
                         So, with great knowledge in development, I can help you create your website whether it’s for yourself, your business, or a portfolio. I’ll give my 100% to deliver smooth performance, beautiful UI/UX design, and maintain REST APIs using technologies like ReactJS, NextJS, NodeJS, and TypeScript.
                     </p>
 
-                    <a href="/dev.jpg" download>
+                    <a href="/resume.pdg" download>
                         <button
                             className="bg-slate-900 cursor-pointer border border-transparent hover:border-slate-900 transition duration-300 hover:text-slate-900 hover:bg-transparent text-white px-4 py-2 rounded-lg tracking-wide"
                             data-aos="fade-down"
