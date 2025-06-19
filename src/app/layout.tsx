@@ -1,25 +1,20 @@
-"use client"
-import { useEffect } from 'react';
-import './assets/globals.css'
-import "./assets/style.css"
+// app/layout.tsx
+import './assets/globals.css';
+import './assets/style.css';
 import 'animate.css';
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+import RootLayout from './RootLayout'; // client wrapper
 
-  useEffect(() => {
-    AOS.init()
-  }, [])
+export const metadata = {
+  title: "Hassan's Portfolio",
+  description: "My personal portfolio built with Next.js and TypeScript.",
+};
 
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
-        {children}
+        <RootLayout>{children}</RootLayout>
       </body>
     </html>
   );
