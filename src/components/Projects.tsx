@@ -9,7 +9,8 @@ export default function ProjectStack() {
         "A real estate platform where users can browse properties, upload their own listings with images, and directly chat with clients for inquiries.",
       tech: ["Typescript", "Nextjs", "MongoDB", "SocketIo", "Tailwindcss"],
       fade: 'fade-left',
-      link: 'https://prime-nest-eim4.vercel.app/'
+      link: 'https://prime-nest-eim4.vercel.app/',
+      comingSoon: false
     },
     {
       img: "/p2.png",
@@ -18,8 +19,18 @@ export default function ProjectStack() {
         "A full-featured Spotify desktop app clone with login via Spotify API. Users can view their playlists, recently played songs, and play music seamlessly.",
       tech: ["Typescript", "ReactJS", "ElectronJS", "SpotifyApi", "Tailwindcss"],
       fade: 'fade-right',
-      link: 'https://github.com/hassan524/SpotifyClone'
-
+      link: 'https://github.com/hassan524/SpotifyClone',
+      comingSoon: false
+    },
+    {
+      img: "/p5.png",
+      name: "SheetSync",
+      description:
+        "A powerful spreadsheet web app inspired by Google Sheets. Users can create and manage sheets, collaborate in real-time, share with teammates, download files, and work across multiple organizations — with granular permission controls, comment threads, version history, and much more.",
+      tech: ["Typescript", "Nextjs", "MongoDB", "SocketIo", "Tailwindcss"],
+      fade: 'fade-left',
+      link: null,
+      comingSoon: true
     },
     {
       img: "/p3.png",
@@ -27,8 +38,9 @@ export default function ProjectStack() {
       description:
         "An eCommerce web app with cart functionality and dynamic product filtering based on search and categories.",
       tech: ["Typescript", "ReactJS", "NodeJS", "ExpressJS", "MongoDB", "Tailwindcss"],
-      fade: 'fade-left',
-      link: 'https://suit-sphere-xe18.vercel.app/'
+      fade: 'fade-right',
+      link: 'https://suit-sphere-xe18.vercel.app/',
+      comingSoon: false
     },
     {
       img: "/p4.png",
@@ -36,8 +48,9 @@ export default function ProjectStack() {
       description:
         "A project and task management app where users can create projects, organize them into groups, manage tasks, and mark them as completed.",
       tech: ["Typescript", "ReactJS", "Tailwindcss", "Firebase", "Vite"],
-      fade: 'fade-right',
-      link: 'https://task-manager-13os.vercel.app/'
+      fade: 'fade-left',
+      link: 'https://task-manager-13os.vercel.app/',
+      comingSoon: false
     },
   ];
 
@@ -57,24 +70,46 @@ export default function ProjectStack() {
             <div key={i} className="timeline-item relative">
 
               <div
-                className={`timeline-card flex flex-col gap-5 relative w-[100%] sm:w-[47%] rounded transition duration-300 ease-in-out ${i % 2 === 0 ? "left-[53%]" : ""
-                  }   sm:p-4`}
+                className={`timeline-card flex flex-col gap-5 relative w-[100%] sm:w-[47%] rounded transition duration-300 ease-in-out ${i % 2 === 0 ? "left-[53%]" : ""} sm:p-4`}
                 data-aos={item.fade}
-                data-aos-duration={1000}>
-                  
-                <div className="overflow-hidden rounded-md">
-                  <a href={item.link} target="_blank" rel="noopener noreferrer">
-                    <img
-                      src={item.img}
-                      alt={item.name}
-                      className="object-cover border-2 border-slate-900 h-full w-full filter brightness-105 cursor-pointer hover:scale-[0.98] transition ease duration-300"
-                    />
-                  </a>
+                data-aos-duration={1000}
+              >
+
+                {/* Image with Coming Soon overlay */}
+                <div className="overflow-hidden rounded-md relative group">
+                  {item.comingSoon ? (
+                    <>
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        className="object-cover border-2 border-slate-900 h-full w-full filter brightness-105"
+                      />
+                      {/* Coming Soon Overlay */}
+                      <div className="absolute inset-0 bg-slate-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 rounded-md cursor-default">
+                        <span className="text-white text-2xl font-bold tracking-widest">Coming Soon</span>
+                        <span className="text-slate-300 text-sm">🚧 In Development</span>
+                      </div>
+                    </>
+                  ) : (
+                    <a href={item.link} target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        className="object-cover border-2 border-slate-900 h-full w-full filter brightness-105 cursor-pointer hover:scale-[0.98] transition ease duration-300"
+                      />
+                    </a>
+                  )}
                 </div>
 
-
                 <div className="flex flex-col sm:gap-2 gap-3">
-                  <h3 className="font-semibold text-2xl">{item.name}</h3>
+                  <div className="flex items-center gap-3">
+                    <h3 className="font-semibold text-2xl">{item.name}</h3>
+                    {item.comingSoon && (
+                      <span className="text-xs font-medium px-2 py-0.5 rounded-full border border-amber-400 text-amber-500 bg-amber-50">
+                        Coming Soon
+                      </span>
+                    )}
+                  </div>
                   <p className="text-base hidden sm:block text-gray-600 leading-7 mb-3">
                     {item.description}
                   </p>
@@ -83,7 +118,7 @@ export default function ProjectStack() {
                     {item.tech.map((tech, index) => (
                       <span
                         key={index}
-                        className=" text-slate-800 px-2 py-1 rounded-full text-sm border border-slate-300"
+                        className="text-slate-800 px-2 py-1 rounded-full text-sm border border-slate-300"
                       >
                         {tech}
                       </span>
