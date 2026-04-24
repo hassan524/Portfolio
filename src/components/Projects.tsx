@@ -1,7 +1,15 @@
 import React from "react";
 
 export default function ProjectStack() {
-  const projects = [
+  const projects: {
+    img: string;
+    name: string;
+    description: string;
+    tech: string[];
+    fade: string;
+    link?: string;
+    comingSoon: boolean;
+  }[] = [
     {
       img: "/p1.png",
       name: "PrimeNest",
@@ -29,7 +37,6 @@ export default function ProjectStack() {
         "A powerful spreadsheet web app inspired by Google Sheets. Users can create and manage sheets, collaborate in real-time, share with teammates, download files, and work across multiple organizations — with granular permission controls, comment threads, version history, and much more.",
       tech: ["Typescript", "Nextjs", "MongoDB", "SocketIo", "Tailwindcss"],
       fade: 'fade-left',
-      link: null,
       comingSoon: true
     },
     {
