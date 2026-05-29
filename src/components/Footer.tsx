@@ -1,4 +1,4 @@
-import { useLanguage } from "@/contexts/LanguageContext";
+import { EN } from "@/lib/translations";
 
 const socials = [
   {
@@ -39,12 +39,12 @@ const quickLinks = [
 ];
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const t = EN;
 
   return (
     <>
       {/* Motivational Quote */}
-      <div className="py-14 sm:py-16 px-4 sm:px-6 border-t border-border/30">
+      <div className="py-14 sm:py-16 px-2 sm:px-6 border-t border-border/30">
         <div className="section-container flex flex-col items-center text-center gap-4">
           <div className="flex items-center gap-3">
             <div className="w-8 h-px" style={{ background: "linear-gradient(to right, transparent, var(--a1-hex))" }} />
@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <footer className="border-t border-border/25 px-4 sm:px-6 py-10">
+      <footer className="border-t border-border/25 px-2 sm:px-6 py-10">
         <div className="section-container">
 
           {/* Top row */}
@@ -152,9 +152,6 @@ export default function Footer() {
           >
             <p className="text-xs text-muted-foreground">
               © {new Date().getFullYear()} Hassan Rehan. All rights reserved.
-            </p>
-            <p className="text-xs text-muted-foreground" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-              Built with React + Vite + TypeScript
             </p>
           </div>
         </div>

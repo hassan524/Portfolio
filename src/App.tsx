@@ -1,6 +1,5 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { Toaster } from "react-hot-toast";
-import { LanguageProvider } from "@/contexts/LanguageContext";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 
@@ -15,10 +14,8 @@ function Router() {
 
 function App() {
   return (
-    <LanguageProvider>
-      <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-        <Router />
-      </WouterRouter>
+    <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+      <Router />
       <Toaster
         position="bottom-center"
         toastOptions={{
@@ -33,7 +30,7 @@ function App() {
           },
         }}
       />
-    </LanguageProvider>
+    </WouterRouter>
   );
 }
 

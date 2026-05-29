@@ -1,25 +1,18 @@
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { EN } from "@/lib/translations";
 
-const roles = [
-  "Frontend Developer",
-  "Backend Developer",
-  "Full Stack Developer",
-  "MERN Stack Dev",
-  "React Developer",
-];
 
 export default function Hero() {
   const el = useRef<HTMLSpanElement>(null);
-  const { t } = useLanguage();
+  const t = EN;
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["Hassan Rehan.", "a Full Stack Dev.", "a MERN Stack Dev.", "Hassan Rehan."],
+      strings: ["Hassan Rehan", "Hassan Reh", "Hassan Rehan", "Hass", "Hassan Rehan",],
       typeSpeed: 72,
       backSpeed: 40,
-      backDelay: 2200,
+      backDelay: 2000,
       startDelay: 400,
       loop: true,
       showCursor: true,
@@ -31,24 +24,10 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex flex-col items-center justify-center px-4 sm:px-6"
-      style={{ minHeight: "100svh", paddingTop: "96px", paddingBottom: "60px" }}
+      className="relative flex flex-col items-center justify-center px-2 sm:px-6"
+      style={{ minHeight: "100svh", paddingTop: "130px" }}
     >
-      <div className="text-center flex flex-col items-center gap-5 max-w-3xl w-full mx-auto">
-
-        {/* Badge */}
-        <div
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase"
-          style={{
-            background: "rgba(var(--a1), 0.1)",
-            border: "1px solid rgba(var(--a1), 0.28)",
-            color: "var(--a1-text)",
-            animation: "navEnter 0.6s ease 0.1s both",
-          }}
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-          {t.hero.badge}
-        </div>
+      <div className="text-center flex flex-col items-center gap-8 max-w-3xl w-full mx-auto">
 
         {/* Main heading */}
         <h1
@@ -119,33 +98,9 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Looking for role band — at the bottom */}
-        <div className="w-full max-w-2xl" style={{ animation: "navEnter 0.6s ease 0.62s both" }}>
-          <div
-            className="rounded-2xl px-4 py-3 flex flex-wrap items-center justify-center gap-2"
-            style={{ background: "rgba(var(--a1), 0.05)", border: "1px solid rgba(var(--a1), 0.13)" }}
-          >
-            <span className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground flex-shrink-0">
-              {t.hero.lookingLabel}
-            </span>
-            {roles.map((r) => (
-              <span
-                key={r}
-                className="text-xs font-semibold px-2.5 py-1 rounded-full"
-                style={{
-                  background: "rgba(var(--a1), 0.1)",
-                  color: "var(--a1-text)",
-                  border: "1px solid rgba(var(--a1), 0.18)",
-                }}
-              >
-                {r}
-              </span>
-            ))}
-          </div>
-        </div>
 
         {/* Scroll hint */}
-        <div className="flex flex-col items-center gap-1 opacity-40" style={{ animation: "navEnter 0.6s ease 0.72s both" }}>
+        <div className="flex flex-col items-center gap-1 opacity-40" style={{ animation: "navEnter 0.6s ease 0.62s both" }}>
           <span className="text-xs text-muted-foreground tracking-widest" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
             {t.hero.scroll}
           </span>

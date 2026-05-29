@@ -1,26 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@200..800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-@import "tailwindcss";
-@import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
-@theme inline {
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-  --font-sans: var(--app-font-sans);
-  --font-mono: var(--app-font-mono);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* ===== LIGHT MODE ===== */
 :root {
@@ -37,38 +19,34 @@
   --muted-foreground: 220 8% 48%;
   --accent: 225 75% 55%;
   --accent-foreground: 0 0% 100%;
-  --app-font-sans: 'Space Grotesk', 'Manrope', sans-serif;
-  --app-font-mono: 'JetBrains Mono', monospace;
   --radius: 0.75rem;
 
-  /* Accent color RGB tuples for rgba() usage */
-  --a1: 67, 97, 238;       /* indigo blue */
-  --a2: 14, 165, 233;      /* sky blue */
+  --a1: 67, 97, 238;
+  --a2: 14, 165, 233;
   --a1-hex: #4361ee;
   --a2-hex: #0ea5e9;
   --a1-text: #4361ee;
   --a2-text: #0ea5e9;
 }
 
-/* ===== DARK MODE — EMBER/CRIMSON THEME ===== */
+/* ===== DARK MODE ===== */
 .dark {
-  --background: 0 8% 5%;        /* #0d0404 — near-black warm */
-  --foreground: 15 12% 90%;     /* #e8e2df — warm off-white */
-  --border: 0 12% 13%;          /* #231111 — dark warm */
+  --background: 0 8% 5%;
+  --foreground: 15 12% 90%;
+  --border: 0 12% 13%;
   --input: 0 12% 13%;
-  --ring: 0 75% 48%;            /* crimson */
-  --card: 0 9% 8%;              /* #160c0c — dark card */
+  --ring: 0 75% 48%;
+  --card: 0 9% 8%;
   --card-foreground: 15 12% 90%;
-  --primary: 0 75% 48%;         /* #db2020 — deep crimson */
+  --primary: 0 75% 48%;
   --primary-foreground: 0 0% 100%;
-  --muted: 0 8% 12%;            /* #1f1010 */
-  --muted-foreground: 15 8% 58%;  /* #9e8c89 */
-  --accent: 22 95% 53%;         /* #f97316 — ember orange */
+  --muted: 0 8% 12%;
+  --muted-foreground: 15 8% 58%;
+  --accent: 22 95% 53%;
   --accent-foreground: 0 0% 100%;
 
-  /* Accent color RGB tuples for dark mode */
-  --a1: 185, 28, 28;       /* crimson */
-  --a2: 234, 88, 12;       /* burnt orange */
+  --a1: 185, 28, 28;
+  --a2: 234, 88, 12;
   --a1-hex: #b91c1c;
   --a2-hex: #ea580c;
   --a1-text: #f87171;
@@ -77,13 +55,18 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
     box-sizing: border-box;
   }
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     transition: background-color 0.4s ease, color 0.4s ease;
   }
@@ -103,7 +86,7 @@ body::before {
   opacity: 0.4;
 }
 
-/* ====== GRADIENT BLOBS (light = subtle, dark = vivid) ====== */
+/* ====== GRADIENT BLOBS ====== */
 .blob-container {
   position: fixed;
   inset: 0;
@@ -111,7 +94,6 @@ body::before {
   pointer-events: none;
   z-index: 0;
 }
-
 .blob {
   position: absolute;
   border-radius: 50%;
@@ -120,13 +102,10 @@ body::before {
   animation: blobFloat 12s ease-in-out infinite;
   mix-blend-mode: multiply;
 }
-
 .dark .blob {
   opacity: 0.22;
   mix-blend-mode: screen;
 }
-
-/* Light mode blobs — soft indigo/blue */
 .blob-1 {
   width: 600px; height: 600px;
   background: radial-gradient(circle, #4361ee, #3a0ca3);
@@ -154,26 +133,16 @@ body::before {
   animation-delay: -12s;
   animation-duration: 16s;
 }
-
-/* Dark mode blobs — crimson / amber / ember */
-.dark .blob-1 {
-  background: radial-gradient(circle, #c72020, #991515);
-}
-.dark .blob-2 {
-  background: radial-gradient(circle, #f97316, #ea580c);
-}
-.dark .blob-3 {
-  background: radial-gradient(circle, #e11d48, #be123c);
-}
-.dark .blob-4 {
-  background: radial-gradient(circle, #f59e0b, #b45309);
-}
+.dark .blob-1 { background: radial-gradient(circle, #c72020, #991515); }
+.dark .blob-2 { background: radial-gradient(circle, #f97316, #ea580c); }
+.dark .blob-3 { background: radial-gradient(circle, #e11d48, #be123c); }
+.dark .blob-4 { background: radial-gradient(circle, #f59e0b, #b45309); }
 
 @keyframes blobFloat {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(30px, -40px) scale(1.05); }
-  50% { transform: translate(-20px, 30px) scale(0.96); }
-  75% { transform: translate(40px, 20px) scale(1.03); }
+  25%       { transform: translate(30px, -40px) scale(1.05); }
+  50%       { transform: translate(-20px, 30px) scale(0.96); }
+  75%       { transform: translate(40px, 20px) scale(1.03); }
 }
 
 /* ====== GRID PATTERN ====== */
@@ -186,7 +155,6 @@ body::before {
   background-size: 60px 60px;
   pointer-events: none;
   z-index: 0;
-  transition: background-image 0.4s ease;
 }
 
 /* ====== GLASSMORPHISM NAV ====== */
@@ -197,7 +165,6 @@ body::before {
   border-bottom: 1px solid rgba(var(--a1), 0.1);
   transition: background 0.4s ease, border-color 0.4s ease;
 }
-
 .dark .glass-nav {
   background: rgba(8, 3, 3, 0.75);
   border-bottom: 1px solid rgba(var(--a1), 0.2);
@@ -207,7 +174,12 @@ body::before {
 .section-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0;
+}
+@media (min-width: 640px) {
+  .section-container {
+    padding: 0 1.5rem;
+  }
 }
 
 /* ====== TIMELINE ====== */
@@ -220,7 +192,6 @@ body::before {
   height: 100%;
   background: rgba(var(--a1), 0.12);
 }
-
 .timeline-line-fill {
   width: 100%;
   background: linear-gradient(to bottom, var(--a1-hex), var(--a2-hex));
@@ -228,7 +199,6 @@ body::before {
   transition: height 0.1s linear;
   box-shadow: 0 0 8px rgba(var(--a1), 0.5);
 }
-
 .timeline-dot {
   position: absolute;
   left: 50%;
@@ -239,7 +209,6 @@ body::before {
   box-shadow: 0 0 12px rgba(var(--a1), 0.6);
   z-index: 2;
 }
-
 @media (max-width: 640px) {
   .timeline-line-track { display: none; }
   .timeline-dot { display: none; }
@@ -295,7 +264,7 @@ body::before {
   transform: translateY(-2px);
 }
 
-/* ====== SKILL BARS — CSS animation, pauseable on hover ====== */
+/* ====== SKILL BARS ====== */
 @keyframes skillFillAnim {
   from { transform: scaleX(0); }
   to   { transform: scaleX(1); }
@@ -315,12 +284,8 @@ body::before {
   animation: skillFillAnim 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   animation-play-state: paused;
 }
-.skill-bar-fill.running {
-  animation-play-state: running;
-}
-.skill-bar-group:hover .skill-bar-fill.running {
-  animation-play-state: paused;
-}
+.skill-bar-fill.running { animation-play-state: running; }
+.skill-bar-group:hover .skill-bar-fill.running { animation-play-state: paused; }
 
 /* ====== SCROLL REVEAL ====== */
 .sr {
@@ -431,7 +396,7 @@ body::before {
 /* ====== FLOATING ====== */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
+  50%       { transform: translateY(-12px); }
 }
 .floating { animation: float 4s ease-in-out infinite; }
 
@@ -471,7 +436,7 @@ body::before {
   border-radius: 9999px;
 }
 
-/* ====== NAV LINKS — center-expand beam ====== */
+/* ====== NAV LINKS ====== */
 .nav-link {
   position: relative;
   transition: color 0.25s;
@@ -500,11 +465,11 @@ body::before {
 /* ====== SCROLL TO TOP BUTTON ====== */
 .scroll-top-btn {
   position: fixed;
-  bottom: 28px;
+  bottom: 80px;
   right: 28px;
   z-index: 998;
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -522,7 +487,7 @@ body::before {
   box-shadow: 0 8px 26px rgba(var(--a1), 0.6);
 }
 
-/* ====== PROJECT CARD — light has border, dark is borderless ====== */
+/* ====== PROJECT CARD ====== */
 .light-card {
   background: rgba(var(--a1), 0.04);
   border: 1px solid rgba(var(--a1), 0.14);
@@ -543,28 +508,22 @@ body::before {
   bottom: 28px;
   right: 28px;
   z-index: 999;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 0 0 1px rgba(var(--a1), 0.2);
-  backdrop-filter: blur(12px);
-  transition: all 0.3s ease;
-  transform: translateY(0);
-}
-.dark .theme-toggle {
-  background: rgba(25, 8, 8, 0.9);
-  box-shadow: 0 4px 20px rgba(var(--a1), 0.3), 0 0 0 1px rgba(var(--a1), 0.3);
+  font-size: 16px;
+  background: hsl(var(--muted));
+  color: hsl(var(--foreground));
+  transition: all 0.25s ease;
 }
 .theme-toggle:hover {
-  transform: translateY(-3px) scale(1.08);
-  box-shadow: 0 8px 28px rgba(var(--a1), 0.35), 0 0 0 1px rgba(var(--a1), 0.4);
+  transform: scale(1.1);
+  background: rgba(var(--a1), 0.15);
 }
 .theme-toggle-enter {
   animation: toggleSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;

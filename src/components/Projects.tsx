@@ -1,7 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { EN } from "@/lib/translations";
 
 const projects = [
+  {
+    img: "/p5.png",
+    name: "SheetSync",
+    description: "A powerful spreadsheet web app inspired by Google Sheets. Real-time collaboration, multi-org support, version history, granular permissions, comment threads, and more.",
+    tech: ["Typescript", "Next.js", "PostgreSQL", "Tailwind"],
+    link: undefined,
+    comingSoon: true,
+  },
   {
     img: "/p1.png",
     name: "PrimeNest",
@@ -17,14 +25,6 @@ const projects = [
     tech: ["Typescript", "React", "ElectronJS", "Spotify API", "Tailwind"],
     link: "https://github.com/hassan524/SpotifyClone",
     comingSoon: false,
-  },
-  {
-    img: "/p5.png",
-    name: "SheetSync",
-    description: "A powerful spreadsheet web app inspired by Google Sheets. Real-time collaboration, multi-org support, version history, granular permissions, comment threads, and more.",
-    tech: ["Typescript", "Next.js", "MongoDB", "Socket.IO", "Tailwind"],
-    link: undefined,
-    comingSoon: true,
   },
   {
     img: "/p3.png",
@@ -48,7 +48,7 @@ export default function Projects() {
   const timelineRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
   const [lineHeight, setLineHeight] = useState(0);
-  const { t } = useLanguage();
+  const t = EN;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,7 +65,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="py-16 sm:py-24 px-4 sm:px-6">
+    <section id="projects" className="py-16 sm:py-20 px-2 sm:px-6">
       <div className="section-container">
         <div className="text-center mb-16 sm:mb-20">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "var(--a1-text)" }}>
@@ -94,13 +94,13 @@ export default function Projects() {
 
                   {/* Card — alternates left/right, borderless in dark mode */}
                   <div
-                    className={`project-card w-full sm:w-[46%] rounded-2xl overflow-hidden ${isRight ? "sm:ml-[54%]" : "sm:mr-[54%]"} light-card dark-borderless`}
+                    className={` w-full sm:w-[46%] rounded-2xl overflow-hidden ${isRight ? "sm:ml-[54%]" : "sm:mr-[54%]"} dark-borderless`}
                   >
                     {/* Image */}
                     <div className="relative overflow-hidden group">
                       {p.comingSoon ? (
                         <>
-                          <img src={p.img} alt={p.name} className="w-full h-40 sm:h-48 object-cover opacity-50" />
+                          <img src={p.img} alt={p.name} className="w-full h-40 sm:h-64 object-cover opacity-50" />
                           <div className="absolute inset-0 flex flex-col items-center justify-center gap-2" style={{ background: "rgba(0,0,0,0.55)" }}>
                             <span className="text-lg font-bold tracking-widest text-white" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Coming Soon</span>
                             <span className="text-sm" style={{ color: "var(--a2-text)" }}>🚧 In Development</span>
@@ -108,7 +108,7 @@ export default function Projects() {
                         </>
                       ) : (
                         <a href={p.link} target="_blank" rel="noopener noreferrer">
-                          <img src={p.img} alt={p.name} className="w-full h-40 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-105" />
+                          <img src={p.img} alt={p.name} className="w-full h-40 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-105" />
                           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" style={{ background: "rgba(var(--a1), 0.2)" }}>
                             <span className="text-white font-semibold tracking-wide text-sm px-4 py-2 rounded-full backdrop-blur-sm" style={{ background: "rgba(var(--a1), 0.75)" }}>
                               View Project ↗

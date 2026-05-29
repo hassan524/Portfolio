@@ -2,37 +2,33 @@ import { useRef, useEffect } from "react";
 
 const chapters = [
   {
-    emoji: "🎯",
     phase: "How It Started",
-    title: "I wanted to hack things.",
-    body: "Honestly? I got into programming because cybersecurity YouTube had me convinced I was going to be a full-time hacker. So I started learning Python to write scripts... and then fell completely down the rabbit hole of actually building stuff.",
+    title: "Curiosity about computers",
+    body: "Since I was young, I had a deep interest in computers. Like many people, I got curious about hacking and how things work inside systems.",
     accent: "var(--a1-hex)",
     accentText: "var(--a1-text)",
     accentRgb: "var(--a1)",
   },
   {
-    emoji: "😂",
-    phase: "What Happened",
-    title: "I ended up writing CSS all day.",
-    body: "I built one thing, then another, then a whole web app. Somewhere along the way I stopped caring about 'hacking' and became obsessed with creating. React, Node.js, databases — it all just clicked. I became a developer almost by accident. Funny how that works.",
+    phase: "First Step",
+    title: "Accidental beginning with web",
+    body: "I once opened an HTML tutorial without knowing what it was for. From that moment, I started learning HTML and CSS and spent nights building and experimenting.",
     accent: "var(--a2-hex)",
     accentText: "var(--a2-text)",
     accentRgb: "var(--a2)",
   },
   {
-    emoji: "🔄",
-    phase: "Full Circle",
-    title: "The security bug never left me.",
-    body: "3+ years later, I'm shipping real products as a full-stack developer. But now I'm coming back to where it all started — learning cybersecurity properly. Not as a hobbyist, but with the systems knowledge I've built as a developer.",
+    phase: "Learning Phase",
+    title: "JavaScript and real projects",
+    body: "After HTML and CSS, I learned JavaScript and started building small projects while improving my understanding of how things work.",
     accent: "#10b981",
     accentText: "#10b981",
     accentRgb: "16,185,129",
   },
   {
-    emoji: "🚀",
-    phase: "Right Now",
-    title: "Diving deep into the kernel.",
-    body: "I'm actively studying Linux internals, network security, and low-level systems. I find it fascinating how the same curiosity that led me to code is now leading me into the OS layer — understanding how everything I've built actually runs.",
+    phase: "Breakthrough",
+    title: "First remote internship",
+    body: "After years of hard work, I finally cracked my first remote internship in the UK. Alongside that, I started working on real world projects with teams.",
     accent: "#8b5cf6",
     accentText: "#a78bfa",
     accentRgb: "139,92,246",
@@ -40,12 +36,69 @@ const chapters = [
 ];
 
 const divingInto = [
-  { label: "Linux Kernel", icon: "🐧", desc: "Kernel modules, system calls, device drivers" },
-  { label: "Network Security", icon: "🌐", desc: "Wireshark, packet analysis, TCP/IP deep dive" },
-  { label: "CTF Challenges", icon: "🚩", desc: "Capture the Flag — reverse engineering & exploits" },
-  { label: "Kali Linux", icon: "🛡️", desc: "Pentesting tools, Metasploit, Nmap, Burp Suite" },
-  { label: "Bash Scripting", icon: "⚙️", desc: "Automation, system scripting, cron jobs" },
-  { label: "AI Security", icon: "🤖", desc: "LLM vulnerabilities, prompt injection, AI red-teaming" },
+  {
+    label: "Linux Systems",
+    desc: "Understanding how operating systems work under the hood",
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M4 4h16v12H4z" />
+        <path d="M4 8h16" />
+      </svg>
+    ),
+  },
+  {
+    label: "Backend Development",
+    desc: "Building scalable APIs and server-side applications",
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="3" y="3" width="18" height="6" />
+        <rect x="3" y="15" width="18" height="6" />
+      </svg>
+    ),
+  },
+  {
+    label: "Networking",
+    desc: "How data moves across systems, protocols and requests",
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="6" cy="12" r="3" />
+        <circle cx="18" cy="6" r="3" />
+        <circle cx="18" cy="18" r="3" />
+        <path d="M8.5 10.5l7-3M8.5 13.5l7 3" />
+      </svg>
+    ),
+  },
+  {
+    label: "Cloud Computing",
+    desc: "Deploying and managing applications in cloud environments",
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M6 15h11a4 4 0 0 0 0-8 5 5 0 0 0-9-1 4 4 0 0 0-2 9z" />
+      </svg>
+    ),
+  },
+  {
+    label: "AI Development",
+    desc: "Working with modern AI tools and integrating them into apps",
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="5" y="5" width="14" height="14" />
+        <path d="M9 9h6v6H9z" />
+      </svg>
+    ),
+  },
+  {
+    label: "System Design",
+    desc: "Structuring applications for scalability and performance",
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="3" y="3" width="7" height="7" />
+        <rect x="14" y="3" width="7" height="7" />
+        <rect x="14" y="14" width="7" height="7" />
+        <path d="M10 6h4M17 10v4" />
+      </svg>
+    ),
+  },
 ];
 
 export default function MyStory() {
@@ -62,12 +115,16 @@ export default function MyStory() {
       },
       { threshold: 0.12 }
     );
-    cardsRef.current.forEach((el) => { if (el) observer.observe(el); });
+
+    cardsRef.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="my-story" className="py-16 sm:py-24 px-4 sm:px-6">
+    <section id="my-story" className="py-16 sm:py-20 px-2 sm:px-6">
       <div className="section-container">
 
         {/* Header */}
@@ -75,12 +132,13 @@ export default function MyStory() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "var(--a1-text)" }}>
             My Journey
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold section-title" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+
+          <h2 className="text-4xl sm:text-5xl font-bold section-title">
             My Story
           </h2>
+
           <p className="text-muted-foreground mt-6 max-w-xl mx-auto text-sm leading-7">
-            From wanting to be a hacker, to shipping web apps, to studying the Linux kernel —
-            this is how it actually happened.
+            A simple journey from curiosity about computers to building real world applications and gaining professional experience.
           </p>
         </div>
 
@@ -89,7 +147,9 @@ export default function MyStory() {
           {chapters.map((ch, i) => (
             <div
               key={i}
-              ref={(el) => { if (el) cardsRef.current[i] = el; }}
+              ref={(el) => {
+                if (el) cardsRef.current[i] = el;
+              }}
               className="sr rounded-2xl p-6 flex flex-col gap-3 relative overflow-hidden"
               style={{
                 background: `rgba(${ch.accentRgb}, 0.04)`,
@@ -97,33 +157,32 @@ export default function MyStory() {
                 transitionDelay: `${i * 80}ms`,
               }}
             >
-              {/* Top accent line */}
               <div
                 className="absolute top-0 left-0 right-0 h-0.5"
-                style={{ background: `linear-gradient(90deg, transparent, ${ch.accent}, transparent)` }}
+                style={{
+                  background: `linear-gradient(90deg, transparent, ${ch.accent}, transparent)`,
+                }}
               />
 
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">{ch.emoji}</span>
-                <span
-                  className="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full"
-                  style={{
-                    background: `rgba(${ch.accentRgb}, 0.12)`,
-                    color: ch.accentText,
-                    border: `1px solid rgba(${ch.accentRgb}, 0.22)`,
-                  }}
-                >
-                  {ch.phase}
-                </span>
-              </div>
-
-              <h3
-                className="text-lg font-bold text-foreground"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              <span
+                className="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full"
+                style={{
+                  background: `rgba(${ch.accentRgb}, 0.12)`,
+                  color: ch.accentText,
+                  border: `1px solid rgba(${ch.accentRgb}, 0.22)`,
+                  width: "fit-content",
+                }}
               >
+                {ch.phase}
+              </span>
+
+              <h3 className="text-lg font-bold" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                 {ch.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-6">{ch.body}</p>
+
+              <p className="text-sm text-muted-foreground leading-6">
+                {ch.body}
+              </p>
             </div>
           ))}
         </div>
@@ -134,7 +193,8 @@ export default function MyStory() {
             <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "var(--a2-text)" }}>
               Currently Exploring
             </p>
-            <h3 className="text-2xl sm:text-3xl font-bold text-foreground" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+
+            <h3 className="text-2xl sm:text-3xl font-bold">
               What I'm Diving Into
             </h3>
           </div>
@@ -143,7 +203,9 @@ export default function MyStory() {
             {divingInto.map((item, i) => (
               <div
                 key={i}
-                ref={(el) => { if (el) cardsRef.current[chapters.length + i] = el; }}
+                ref={(el) => {
+                  if (el) cardsRef.current[chapters.length + i] = el;
+                }}
                 className="sr flex items-start gap-4 p-4 rounded-xl"
                 style={{
                   background: "rgba(var(--a1), 0.04)",
@@ -152,24 +214,29 @@ export default function MyStory() {
                 }}
               >
                 <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0"
-                  style={{ background: "rgba(var(--a1), 0.08)", border: "1px solid rgba(var(--a1), 0.16)" }}
+                  className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style={{
+                    background: "rgba(var(--a1), 0.08)",
+                    border: "1px solid rgba(var(--a1), 0.16)",
+                    color: "var(--a1-text)",
+                  }}
                 >
                   {item.icon}
                 </div>
+
                 <div>
-                  <p
-                    className="font-semibold text-foreground text-sm mb-0.5"
-                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                  >
+                  <p className="font-semibold text-sm mb-0.5">
                     {item.label}
                   </p>
-                  <p className="text-xs text-muted-foreground leading-5">{item.desc}</p>
+                  <p className="text-xs text-muted-foreground leading-5">
+                    {item.desc}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );

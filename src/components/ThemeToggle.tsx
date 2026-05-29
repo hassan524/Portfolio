@@ -34,7 +34,6 @@ export default function ThemeToggle() {
       className="theme-toggle theme-toggle-enter"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       title={isDark ? "Light mode" : "Dark mode"}
-      style={{ bottom: "88px" }}
     >
       {isDark ? "☀️" : "🌙"}
     </button>

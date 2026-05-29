@@ -3,6 +3,7 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import GitHubSection from "@/components/GitHubSection";
 import MyStory from "@/components/MyStory";
 import Experience from "@/components/Experience";
 import Services from "@/components/Services";
@@ -37,10 +38,11 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground relative transition-colors duration-400">
       <AnimatedBackground />
       <CursorGlow />
-      <div className="relative z-10">
+      <div className="relative z-10 p-4">
         <Navbar />
         <Hero />
         <About />
+        <GitHubSection />
         <MyStory />
         <Experience />
         <Services />

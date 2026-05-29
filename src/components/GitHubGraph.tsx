@@ -39,7 +39,13 @@ function generateGrid() {
 
 const GRID = generateGrid();
 const LIGHT_COLORS = ["#e5e7eb", "#bbf7d0", "#4ade80", "#16a34a", "#14532d"];
-const DARK_COLORS  = ["rgba(185,28,28,0.12)", "rgba(185,28,28,0.35)", "rgba(185,28,28,0.6)", "#b91c1c", "#dc2626"];
+const DARK_COLORS = [
+  "rgba(220,38,38,0.15)",
+  "rgba(220,38,38,0.35)",
+  "rgba(220,38,38,0.55)",
+  "#dc2626",
+  "#991b1b",
+];
 const DAYS_LABELS = ["", "Mon", "", "Wed", "", "Fri", ""];
 const MONTH_LABELS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
