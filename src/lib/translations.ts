@@ -3,7 +3,7 @@ export const EN = {
   hero: {
     badge: "Available for work",
     title1: "Hey, I'm",
-    subtitle: "Full-stack developer who loves building things — APIs, UIs, and everything in between. Currently diving into cybersecurity and Linux.",
+    subtitle: "Full-stack developer who loves building things — APIs, UIs, and everything in between.",
     cta1: "See My Work",
     cta2: "Contact Me",
     stats: [["3+", "Years Coding"], ["5+", "Projects Built"], ["3+", "Certs Earned"]],

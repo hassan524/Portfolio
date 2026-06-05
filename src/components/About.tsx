@@ -8,7 +8,6 @@ const skills = [
   { name: "MongoDB / PostgreSQL", level: 80 },
   { name: "Docker / CI-CD", level: 78 },
   { name: "Authentication & Security", level: 76 },
-  { name: "System Design", level: 75 },
 ];
 
 export default function About() {

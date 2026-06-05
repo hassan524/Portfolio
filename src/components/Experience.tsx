@@ -4,7 +4,7 @@ const experience = [
   {
     role: "Full Stack Developer",
     company: "Don-Clem Technology",
-    companyUrl: "https://don-clem.com",
+    companyUrl: "https://www.donclemtech.com/",
     period: "Jul 2025 – Jan 2026 · 7 mos",
     location: "United Kingdom · Remote",
     type: "Internship",
@@ -19,9 +19,9 @@ const experience = [
       "Next.js",
       "PostgreSQL",
       "TypeScript",
-      "Gemini AI",
-      "Twitter API",
-      "Push Notifications",
+      // "Gemini AI",
+      // "Twitter API",
+      // "Push Notifications",
       "React",
       "Node.js",
     ],
@@ -35,7 +35,7 @@ const techStack = [
   { name: "Node.js", color: "#10B981" },
   { name: "MongoDB", color: "#22C55E" },
   { name: "PostgreSQL", color: "#06b6d4" },
-  { name: "Gemini AI", color: "var(--a1-text)" },
+  // { name: "Gemini AI", color: "var(--a1-text)" },
   { name: "Express", color: "#f59e0b" },
   { name: "Tailwind", color: "#38bdf8" },
   { name: "Firebase", color: "#f59e0b" },
@@ -149,7 +149,7 @@ export default function Experience() {
 
               {/* Links */}
               <div className="flex flex-wrap gap-3 pt-2">
-                <a
+                {/* <a
                   href="https://linkedin.com"
                   target="_blank"
                   className="text-xs px-4 py-2 rounded-lg border"
@@ -159,10 +159,12 @@ export default function Experience() {
                   }}
                 >
                   LinkedIn
-                </a>
+                </a> */}
 
                 <a
-                  href="#"
+                  href="https://drive.google.com/file/d/1olNC6iQGbDBPVe1Y0a12YmYxdyVDembK/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-xs px-4 py-2 rounded-lg border"
                   style={{
                     borderColor: "rgba(var(--a2), 0.25)",
@@ -177,7 +179,7 @@ export default function Experience() {
         </div>
 
         {/* TECH SLIDER (UNCHANGED EXACTLY AS BEFORE) */}
-      <div className="text-center mt-32">
+        <div className="text-center mt-32">
           <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
             Technologies I Work With
           </p>

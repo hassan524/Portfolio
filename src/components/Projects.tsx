@@ -8,7 +8,7 @@ const projects = [
     description: "A powerful spreadsheet web app inspired by Google Sheets. Real-time collaboration, multi-org support, version history, granular permissions, comment threads, and more.",
     tech: ["Typescript", "Next.js", "PostgreSQL", "Tailwind"],
     link: undefined,
-    comingSoon: true,
+    comingSoon: false,
   },
   {
     img: "/p1.png",
@@ -97,7 +97,7 @@ export default function Projects() {
                     className={` w-full sm:w-[46%] rounded-2xl overflow-hidden ${isRight ? "sm:ml-[54%]" : "sm:mr-[54%]"} dark-borderless`}
                   >
                     {/* Image */}
-                    <div className="relative overflow-hidden group">
+                    <div className="relative overflow-hidden group cursor-pointer">
                       {p.comingSoon ? (
                         <>
                           <img src={p.img} alt={p.name} className="w-full h-40 sm:h-64 object-cover opacity-50" />
@@ -106,8 +106,8 @@ export default function Projects() {
                             <span className="text-sm" style={{ color: "var(--a2-text)" }}>🚧 In Development</span>
                           </div>
                         </>
-                      ) : (
-                        <a href={p.link} target="_blank" rel="noopener noreferrer">
+                      ) : p.link ? (
+                        <a href={p.link} target="_blank" rel="noopener noreferrer" className="block">
                           <img src={p.img} alt={p.name} className="w-full h-40 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-105" />
                           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" style={{ background: "rgba(var(--a1), 0.2)" }}>
                             <span className="text-white font-semibold tracking-wide text-sm px-4 py-2 rounded-full backdrop-blur-sm" style={{ background: "rgba(var(--a1), 0.75)" }}>
@@ -115,6 +115,15 @@ export default function Projects() {
                             </span>
                           </div>
                         </a>
+                      ) : (
+                        <div className="relative">
+                          <img src={p.img} alt={p.name} className="w-full h-40 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-105" />
+                          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" style={{ background: "rgba(var(--a1), 0.2)" }}>
+                            <span className="text-white font-semibold tracking-wide text-sm px-4 py-2 rounded-full backdrop-blur-sm" style={{ background: "rgba(var(--a1), 0.75)" }}>
+                              Active Project
+                            </span>
+                          </div>
+                        </div>
                       )}
                     </div>
 

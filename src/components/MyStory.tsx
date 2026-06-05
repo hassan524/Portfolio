@@ -20,7 +20,7 @@ const chapters = [
   {
     phase: "Learning Phase",
     title: "JavaScript and real projects",
-    body: "After HTML and CSS, I learned JavaScript and started building small projects while improving my understanding of how things work.",
+    body: "After HTML and CSS, I learned JavaScript and kept going — learning advanced technologies and frameworks, and working late into the night on whatever I found useful and exciting.",
     accent: "#10b981",
     accentText: "#10b981",
     accentRgb: "16,185,129",
@@ -84,18 +84,6 @@ const divingInto = [
       <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
         <rect x="5" y="5" width="14" height="14" />
         <path d="M9 9h6v6H9z" />
-      </svg>
-    ),
-  },
-  {
-    label: "System Design",
-    desc: "Structuring applications for scalability and performance",
-    icon: (
-      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-        <rect x="3" y="3" width="7" height="7" />
-        <rect x="14" y="3" width="7" height="7" />
-        <rect x="14" y="14" width="7" height="7" />
-        <path d="M10 6h4M17 10v4" />
       </svg>
     ),
   },
