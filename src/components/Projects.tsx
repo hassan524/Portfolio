@@ -7,7 +7,7 @@ const projects = [
     name: "SheetSync",
     description: "A powerful spreadsheet web app inspired by Google Sheets. Real-time collaboration, multi-org support, version history, granular permissions, comment threads, and more.",
     tech: ["Typescript", "Next.js", "PostgreSQL", "Tailwind"],
-    link: undefined,
+    link: "http://sheetsync.site/",
     comingSoon: false,
   },
   {
